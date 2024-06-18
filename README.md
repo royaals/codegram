@@ -36,7 +36,7 @@ Codegram is an advanced legacy code converter designed to transform VB, Delphi, 
 - **Cloudflare R2**: Used for storing converted code and file conversion history.
 
 
-## AI Innovation Challenge: What We Built
+## AI Innovation Challenge: 
 
 ### Overview
 In the AI Innovation Challenge, we developed a suite of tools aimed at enhancing the coding and software development process. These tools leverage advanced AI techniques to assist developers in various aspects of their work, from understanding and debugging code to generating comprehensive documentation.
@@ -66,12 +66,7 @@ In the AI Innovation Challenge, we developed a suite of tools aimed at enhancing
      - Provides detailed error descriptions and potential fixes.
      - Integrates with popular development environments.
 
-### Getting Started
 
-#### Prerequisites
-- Ensure you have the following software installed:
-  - Python 3.x
-  - Required libraries: `numpy`, `pandas`, `scikit-learn`, `nltk` (for natural language processing tasks)
 
 
 
