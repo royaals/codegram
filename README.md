@@ -4,6 +4,10 @@
 
 Codegram is an advanced legacy code converter designed to transform VB, Delphi, and COBOL code into modern languages such as Java, C#, and Python. Our solution ensures lightning-fast conversion while maintaining code efficiency and readability. Codegram also provides integrated tools for debugging, code optimization, and code explanation to enhance the development experience.
 
+## System Design
+
+![AI-Driven Legacy to Modern Code SaaS System Design](systemdesign.jpg)
+
 ## Features
 
 - **Lightning-fast Conversion**: Converts large legacy code files to modern languages within milliseconds using advanced algorithms.
@@ -71,24 +75,6 @@ In the AI Innovation Challenge, we developed a suite of tools aimed at enhancing
 
 
 
-
-### Team Members
-
-- **Vignesh Prabhu**
-  - Institution: Shri Madhwa Vadiraja Institute of Technology & Management
-  - Year: 3rd Year
-
-- **Royal Salins**
-  - Institution: Shri Madhwa Vadiraja Institute of Technology & Management
-  - Year: 3rd Year
-
-- **Saurabh**
-  - Institution: Shri Madhwa Vadiraja Institute of Technology & Management
-  - Year: 3rd Year
-
-- **Prathviraj Holla**
-  - Institution: Shri Madhwa Vadiraja Institute of Technology & Management
-  - Year: 3rd Year
 
 
 

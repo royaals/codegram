@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "wrangler": "^3.60.3"
-  },
-  "dependencies": {
-    "@vercel/postgres": "^0.8.0"
-  }
-}
