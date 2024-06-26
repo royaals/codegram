@@ -10,7 +10,9 @@ const ConversionHistory = () => {
     const location = useLocation();
     const { title } = location.state || { title: '' }; 
     const [data, setData] = useState('');
-    const docsUrl = id?.replace('-new', '') 
+    const docsUrl = id?.replace('-new', '');
+    console.log("id:", id);
+
     const copyCode = async () => {
         try {
             await navigator.clipboard.writeText(data);
@@ -22,8 +24,13 @@ const ConversionHistory = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`https://pub-ed6294b09052471093b13f036a7fe802.r2.dev/${id}.json`);
-            setData(result.data);
+            try {
+                const result = await axios.get(`https://s3.ap-south-1.amazonaws.com/royal.codegram/${id}.json`);
+                console.log("new code data", result.data);
+                setData(result.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         };
 
         fetchData();
@@ -36,13 +43,13 @@ const ConversionHistory = () => {
                 <div className="px-10 w-full pt-200 max-w-screen-xl pt-12">
                     <div>
                         <div className="text-5xl font-extrabold">
-                            {title ? title : 'Conversion History'} {/* Displaying the title */}
+                            {title ? title : 'Conversion History'}
                         </div>
                         <div className="pt-4">
                             <div className="bg-gray-900 rounded-md p-2">
-                            <SyntaxHighlighter language="java" style={docco}>
-                {data}
-                </SyntaxHighlighter>
+                                <SyntaxHighlighter language="java" style={docco}>
+                                    {data}
+                                </SyntaxHighlighter>
                             </div>
                         </div>
                         <div className="flex items-center justify-center mt-2">
@@ -55,7 +62,7 @@ const ConversionHistory = () => {
                                 </button>
                             </Link>
                             <Link to={`/debug/${id}`} state={{ title: title }}>
-                                <button className="ml-3 rounded-md bg-yellow-600 text-white px-3 py-1 ">
+                                <button className="ml-3 rounded-md bg-yellow-600 text-white px-3 py-1">
                                     Debug
                                 </button>
                             </Link>
