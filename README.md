@@ -33,7 +33,7 @@ Codegram is an advanced legacy code converter designed to transform VB, Delphi, 
 - **PostgreSQL**: Selected for its scalability and low latency.
 
 ### Storage
-- **Cloudflare R2**: Used for storing converted code and file conversion history.
+- **AWS S3**: Used for storing converted code and file conversion history.
 
 
 ### Tools Developed:
