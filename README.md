@@ -6,7 +6,7 @@ Codegram is an advanced legacy code converter designed to transform VB, Delphi, 
 
 ## System Design
 
-![AI-Driven Legacy to Modern Code SaaS System Design](systemdesign.jpg)
+![AI-Driven Legacy to Modern Code SaaS System Design](systemarchitecture.jpg)
 
 ## Features
 
