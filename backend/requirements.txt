@@ -1,7 +1,8 @@
-Werkzeug==3.0.3
-python-dotenv==1.0.1
-groq==0.5.0
-Flask==3.0.3
-psycopg2-binary==2.9.9
-Flask-Cors==4.0.1
-requests==2.31.0
+Flask==2.0.1
+flask-cors==3.0.10
+boto3==1.17.49
+requests==2.25.1
+psycopg2-binary==2.9.1
+python-dotenv==0.19.0
+werkzeug==2.0.1
+groq==0.4.1 
