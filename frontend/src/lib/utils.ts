@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const API_URL = "http://localhost:8181";
+export const API_URL =process.env.VITE_REACT_APP_BACKEND_URL;

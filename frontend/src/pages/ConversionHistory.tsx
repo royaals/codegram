@@ -11,8 +11,8 @@ const ConversionHistory = () => {
     const { title } = location.state || { title: '' }; 
     const [data, setData] = useState('');
     const docsUrl = id?.replace('-new', '');
-    console.log("id:", id);
-
+    
+    const s3NewCode=process.env.VITE_REACT_APP_S3_NEW_CODE;
     const copyCode = async () => {
         try {
             await navigator.clipboard.writeText(data);
@@ -25,7 +25,7 @@ const ConversionHistory = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const result = await axios.get(`https://s3.ap-south-1.amazonaws.com/royal.codegram/${id}.json`);
+                const result = await axios.get(`${s3NewCode}/${id}.json`);
                 console.log("new code data", result.data);
                 setData(result.data);
             } catch (error) {
