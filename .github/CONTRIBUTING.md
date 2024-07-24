@@ -44,7 +44,6 @@ When submitting a pull request, please:
 
 - **Use Consistent Coding Style**: Follow the coding style used in the project.
 - **Write Meaningful Commit Messages**: Provide clear, concise descriptions of your changes.
-- **Add Tests**: Ensure that your code changes are covered by tests.
 - **Document Your Code**: Comment your code and update any relevant documentation.
 
 ### Code of Conduct
