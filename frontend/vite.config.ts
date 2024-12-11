@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
 
   return {
+    ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
     plugins: [react()],
     resolve: {
       alias: {
