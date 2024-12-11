@@ -45,8 +45,10 @@ s3_client = boto3.client(
     region_name=AWS_DEFAULT_REGION,
 )
 
+
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 def upload_to_s3(filename, filecontent):
     try:
@@ -61,10 +63,12 @@ def upload_to_s3(filename, filecontent):
         print(f"Upload error: {e}")
         return False
 
+
 @app.route("/", methods=["GET"])
 def home():
     con_id = str(uuid.uuid4())
     return "Running on Python with Postgres", 200
+
 
 @app.route("/signup", methods=["POST"])
 def signup():
@@ -93,6 +97,7 @@ def signup():
         "id": user_id,
         "message": "User created successfully",
     }, 200
+
 
 @app.route("/signin", methods=["POST"])
 def signin():
@@ -124,6 +129,7 @@ def signin():
         "id": user_id,
         "message": "Signed in successfully",
     }, 200
+
 
 @app.route("/convert", methods=["POST"])
 def convert():
@@ -184,6 +190,7 @@ def convert():
 
     return {"status": 400, "error": "Invalid file extension"}, 400
 
+
 @app.route("/chatid/get", methods=["GET"])
 def get_chat_ids():
     user_id = request.args.get("userid")
@@ -201,11 +208,14 @@ def get_chat_ids():
     connection_pool.putconn(conn)
     return jsonify(records), 200
 
+
 @app.route("/docs/get", methods=["GET"])
 def get_docs():
     chatid = request.args.get("chatid")
     title = request.args.get("title")
-    chat_url = f"https://s3.{AWS_DEFAULT_REGION}.amazonaws.com/{S3_BUCKET_NAME}/{chatid}.json"
+    chat_url = (
+        f"https://s3.{AWS_DEFAULT_REGION}.amazonaws.com/{S3_BUCKET_NAME}/{chatid}.json"
+    )
     response = requests.get(chat_url)
     if response.status_code != 200:
         return {"status": 400, "error": "Failed to fetch the code from S3"}, 400
@@ -241,11 +251,14 @@ Make sure the html file is well-structured and easy to follow, using appropriate
     content = chat_completion.choices[0].message.content
     return content
 
+
 @app.route("/debug/get", methods=["GET"])
 def debug_code():
     chatid = request.args.get("chatid")
     title = request.args.get("title")
-    chat_url = f"https://s3.{AWS_DEFAULT_REGION}.amazonaws.com/{S3_BUCKET_NAME}/{chatid}.json"
+    chat_url = (
+        f"https://s3.{AWS_DEFAULT_REGION}.amazonaws.com/{S3_BUCKET_NAME}/{chatid}.json"
+    )
     response = requests.get(chat_url)
     if response.status_code != 200:
         return {"status": 400, "error": "Failed to fetch the code from S3"}, 400
@@ -270,5 +283,6 @@ def debug_code():
     content = chat_completion.choices[0].message.content
     return content
 
+
 if __name__ == "__main__":
-    app.run(debug=True, port=8181)
+    app.run(debug=True, port=6001)
