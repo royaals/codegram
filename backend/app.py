@@ -285,4 +285,5 @@ def debug_code():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=6001)
+    port = int(os.environ.get("PORT", 6161))  # Use PORT from env or default to 8181
+    app.run(host="0.0.0.0", port=port, debug=False)
