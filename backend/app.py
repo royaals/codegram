@@ -16,6 +16,9 @@ from flask import Flask, request, jsonify
 from botocore.client import Config
 from werkzeug.security import generate_password_hash, check_password_hash
 
+for var in ["HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy"]:
+    if var in os.environ:
+        del os.environ[var]
 load_dotenv()
 app = Flask(__name__)
 CORS(app)
