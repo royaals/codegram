@@ -49,7 +49,7 @@ export default function Codegen() {
 
   function getFileExtension() {
     switch (dropInputs.to) {
-      case "c++":
+      case "C++":
         return "cpp";
       case "java":
         return "java";
