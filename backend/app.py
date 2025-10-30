@@ -159,7 +159,7 @@ def convert():
                     """,
                 }
             ],
-            model="llama3-8b-8192",
+            model="llama-3.1-8b-instant",
         )
 
         con_id = str(uuid.uuid4())
@@ -246,7 +246,7 @@ Make sure the html file is well-structured and easy to follow, using appropriate
                 "content": prompt,
             }
         ],
-        model="llama3-8b-8192",
+        model="llama-3.1-8b-instant",
     )
     content = chat_completion.choices[0].message.content
     return content
@@ -276,7 +276,7 @@ def debug_code():
                     "content": prompt,
                 }
             ],
-            model="llama3-8b-8192",
+            model="llama-3.1-8b-instant",
         )
     except Exception as e:
         return f"An error occurred: {e} --- {prompt}"
